@@ -1,0 +1,867 @@
+// 共通----------------------//
+$black: rgba(26, 24, 24, 0.867);
+$yellow: hsla(61, 100%, 66%, 0.843);
+$blue: rgb(111, 223, 238);
+$twitter: rgb(29, 149, 224);
+
+html,
+body,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+input,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+  line-height: 1.7;
+  color: $black;
+  background-color: rgba(136, 252, 252, 0.274);
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+}
+
+.error {
+  color: rgb(241, 35, 35);
+  margin-top: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#submitBtn {
+  display: none;
+}
+
+// ヘッダー
+#header {
+  padding: 30px 0 30px 0;
+  width: 100%;
+  background-color: $blue;
+  & .page-header {
+    width: 800px;
+    margin: 0 auto 0 auto;
+    & .main-nav {
+      display: flex;
+      list-style: none;
+      & li {
+        margin-left: 50px;
+        font-size: 18px;
+        & a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+// ヘッダー
+
+// 自動スライド画像
+.bg_loop {
+  margin-top: 40px;
+}
+
+.bg_loop_top {
+  width: 100%;
+  height: 200px; /* 画像の高さを指定 */
+  position: relative;
+  background: url("images/loop_img_top.jpg") repeat-x 0 0;
+  background-size: auto 100%;
+  animation: bg-slider-left 50s linear infinite;
+  margin: 10px 0;
+  padding: 0;
+  opacity: 0.7;
+}
+
+.bg_loop_bottom {
+  width: 100%;
+  height: 200px; /* 画像の高さを指定 */
+  position: relative;
+  background: url("images/loop_img_bottom.jpg") repeat-x 0 0;
+  background-size: auto 100%;
+  animation: bg-slider-right 50s linear infinite;
+  margin: 10px 0;
+  padding: 0;
+  opacity: 0.7;
+}
+@keyframes bg-slider-left {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2000px 0;
+  } /* 1518pxとは使用した背景画像の長さ */
+}
+@keyframes bg-slider-right {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 2000px 0;
+  } /* 1518pxとは使用した背景画像の長さ */
+}
+// 自動スライド画像
+
+// タイトル
+.title {
+  background-color: hsla(61, 100%, 66%, 0.843);
+  height: 150px;
+  width: 100%;
+  & text {
+    font-weight: bold;
+    font-size: 80px;
+    font-family: Meiryo UI;
+    stroke: #ffffff;
+    fill: $blue;
+    letter-spacing: 9px;
+    text-anchor: middle;
+  }
+  .title > svg > use:nth-of-type(1) {
+    stroke-width: 100px;
+    paint-order: stroke;
+    stroke-linejoin: round;
+  }
+  .title > svg > use:nth-of-type(2) {
+    stroke-width: 10px;
+  }
+}
+// タイトル
+
+// トップページ
+.content {
+  background-color: rgba(136, 252, 252, 0.274);
+  height: 500px;
+  & p {
+    padding-top: 80px;
+    font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+    text-align: center;
+    color: $black;
+    font-size: 35px;
+  }
+}
+.btn_block {
+  background-color: $blue;
+  font-weight: bold;
+  width: 300px;
+  margin: 80px auto 0 auto;
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+  color: $black;
+  font-size: 35px;
+  display: inline-block;
+  text-align: center;
+  height: 80px;
+  padding-top: 18px;
+  border-radius: 15px;
+  border: hsla(61, 100%, 66%, 0.843) 5px solid;
+  & :hover {
+    opacity: 0.5;
+  }
+}
+.btn {
+  text-align: center;
+}
+// トップページ
+
+// ログインページ
+
+.login_content {
+  // padding-bottom: 10px;
+  margin: 80px auto;
+  width: 500px;
+  height: auto;
+  padding-bottom: 10px;
+  background-color: white;
+  text-align: center;
+  // border: hsla(61, 100%, 66%, 0.843) 5px solid;
+  box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+
+  & .login_title {
+    & #head {
+      padding-bottom: 14px;
+      background-color: $yellow;
+      text-align: center;
+      margin: 5px auto;
+      & p {
+        font-size: 1.3rem;
+        padding-top: 20px;
+        display: inline-block;
+      }
+    }
+    & #lead {
+      text-align: center;
+      & a {
+        color: rgb(56, 221, 243);
+      }
+    }
+  }
+  & .form_area {
+    text-align: center;
+    & .form_group {
+      margin-top: 20px;
+      & .form {
+        margin-top: 10px;
+        height: 15px;
+        width: 80%;
+      }
+    }
+    & input[type="text"],
+    input[type="password"] {
+      // background-color: rgba(230, 223, 223, 0.5);
+      font-size: 1rem;
+      padding: 10px;
+    } 
+    & .auto_login {
+      text-align: left;
+      margin: 20px auto 20px 40px;
+    }
+  }
+}
+.login_btn {
+  width: 85%;
+  height: 60px;
+  background-color: $blue;
+  color: $black;
+  font-size: 1.1rem;
+  border-color: transparent;
+  margin-bottom: 20px;
+}
+
+// ログインページ
+
+// 新規登録ページ
+#sign_up_content {
+  margin: 80px auto;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+  width: 500px;
+  height: auto;
+  text-align: center;
+  padding-bottom: 20px;
+  & #head {
+    background-color: $yellow;
+    & p {
+      font-size: 1.3rem;
+      padding: 20px;
+    }
+  }
+  & .sign_up_form {
+    & .required {
+      margin-left: 0;
+    }
+    text-align: left; 
+    width: 90%;
+    margin: 8px auto;
+  }
+  & .birthday {
+    text-align: center;
+    & select {
+      margin-left: 15px;
+    }
+  }
+
+  & input[type="text"],
+  input[type="password"] {
+    width: 94%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .sexForm {
+    text-align: center;
+  }
+  .required {
+    color: red;
+  }
+  & .check_btn {
+    width: 85%;
+    height: 60px;
+    background-color: $blue;
+    color: $black;
+    font-size: 1.1rem;
+    border-color: transparent;
+    margin-bottom: 28px;
+    margin-top: 8px;
+  }
+
+  & .radio-inline__input {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+  }
+  & .radio-inline__label {
+    text-align: center;
+    width: 42%;
+    height: 25px;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    border: 1px $black solid;
+  }
+
+  & .radio-inline__input:checked + .radio-inline__label {
+    background: $blue;
+    color: #fff;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+  }
+}
+.submit_by_twitter {
+  width: 85%;
+  height: 60px;
+  margin: 0 auto 20px auto;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 60px;
+  background-color: $twitter;
+  text-align: center;
+  // & .submit_tw_txt {
+  //   // line-height: 30px;
+  // }
+}
+// 新規登録ページ
+
+// 確認ページ
+.profile_box {
+  & #head{
+    background-color: $yellow;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    margin-bottom: 20px;
+  }
+  & .confirm_btn {
+margin: 20px 0;
+    & .rewrite {
+      position: absolute;
+line-height: 70px;
+    }
+    & .complete_btn {
+margin: 0 auto;
+width: 430px;
+height: 60px;
+border: none;
+background-color: $blue;
+    }
+  }
+}
+// 確認ページ
+
+// 会員登録完了
+.complete_sign_up {
+height: auto !important;
+padding-bottom: 100px !important;
+}
+// 会員登録完了
+
+// 診断ページ
+.question_forms {
+  margin: 30px auto;
+  text-align: center;
+
+  & input[type="text"] {
+    width: 250px;
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+  & #search_btn {
+    width: 50px;
+    height: 32px;
+    background-color: $yellow;
+    color: $black;
+    font-size: 1rem;
+    border: 1px $black solid;
+    border-radius: 2px;
+  }
+  & .result_img {
+    width: 100px;
+    height: 100px;
+  }
+  & .results {
+    padding: 10px;
+    margin: 30px auto 0 auto;
+    width: 80%;
+    height: 450px;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+    & .result {
+      margin-top: 10px;
+    }
+    & .result_radio {
+      display: none;
+    }
+    & #submitBtn {
+      display: none;
+    }
+  }
+  & .selected_item {
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+    border: 2px $yellow solid;
+    width: 50%;
+    height: 300px;
+    & .selected_img {
+      margin-top: 20px;
+      width: 200px;
+      height: 200px;
+    }
+    & .selected_itemName {
+      padding: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+  }
+
+  & .assays {
+    & .title_box {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: $yellow 4px solid;
+      border-top: $yellow 4px solid;
+      background-color: white;
+      & .assay_title {
+        font-size: 1.1rem;
+        font-weight: bolder;
+        padding: 20px;
+        display: inline-block;
+      }
+    }
+    & .assay {
+      margin: 10px auto;
+      width: 50%;
+      & .radio-inline__input {
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute !important;
+      }
+      & .radio-inline__label {
+        font-size: 1.1rem;
+        text-align: center;
+        line-height: 40px;
+        width: 80%;
+        height: 40px;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 3px;
+        border: 1px $black solid;
+        background-color: white;
+      }
+
+      & .radio-inline__input:checked + .radio-inline__label {
+        background: $blue;
+        font-weight: bolder;
+        color: white;
+        // text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+  & #submit_btn {
+    width: 50%;
+    height: 60px;
+    background-color: $blue;
+    color: $black;
+    font-size: 1.1rem;
+    border-color: transparent;
+    margin-bottom: 28px;
+    margin-top: 40px;
+  }
+}
+// 診断ページ
+
+// 結果ページ
+.outcomes {
+  text-align: center;
+  background-color: white;
+  margin: 80px auto;
+  box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+  width: 70%;
+  height: auto;
+  // padding: 40px;
+  & h2 {
+    margin-top: 80px;
+    padding: 40px;
+    background-color: $yellow;
+  }
+  & .outcomes_content {
+    padding-bottom: 40px;
+  }
+  & .outcome {
+    margin: 40px auto;
+    margin-bottom: 40px;
+    width: 70%;
+    padding: 40px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-align: center;
+    border: rgba(111, 223, 238, 0.623) 8px solid;
+    border-radius: 10px;
+    & p {
+      padding: 10px;
+    }
+    & .star {
+      width: 30px;
+      height: 30px;
+      margin: 0;
+    }
+    & .result_img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  & .share {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+.share_btn_block {
+  margin: 20px auto;
+  background-color: rgb(29, 149, 224);
+  border-radius: 5px;
+  width: 130px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  & .share_twitter {
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+  }
+}
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  &.is-active {
+    display: block;
+  }
+  & .modal-content {
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    width: 700px;
+    height: 600px;
+    margin: 40% auto;
+    border-radius: 7px;
+    & .modal_header {
+      text-align: center;
+      & #closeBtn {
+        cursor: pointer;
+        position: absolute;
+        right: 335px;
+        top: 545px;
+        margin-right: 0;
+        font-size: 2.5rem;
+      }
+    }
+    & .tweetText {
+      font-size: 1.6rem;
+      padding: 10px;
+    }
+    & p {
+      display: inline-block;
+      margin: 20px 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    & .tweet_btn_block {
+      margin: 40px auto;
+      background-color: rgb(29, 149, 224);
+      width: 130px;
+      height: 40px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      border: none;
+      font-size: 1.2rem;
+
+      & .tweet {
+        color: white;
+        font-weight: bold;
+        line-height: 40px;
+      }
+    }
+  }
+}
+// 結果ページ
+
+// プロフィールページ
+.profile_box {
+  margin: 80px auto;
+  background-color: white;
+  width: 80%;
+  height: auto;
+  padding-bottom: 10px;
+  box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+  & .profile_title {
+    padding-top: 40px;
+    text-align: center;
+  }
+  & .profile_contents {
+    padding: 0 40px;
+    & .img_title {
+      margin-right: auto;
+      line-height: 100px;
+    }
+    & .profile_content {
+      display: flex;
+      margin: 30px 0;
+      & .icon {
+        border: 1px gray solid;
+      }
+      & .content_title {
+        width: 250px;
+        margin-right: 100px;
+      }
+    }
+    & .edit_profile {
+      margin: 20px auto;
+      text-align: center;
+      width: 250px;
+      height: 40px;
+      background-color: $blue;
+      color: $black;
+      line-height: 40px;
+    }
+  }
+}
+// プロフィールページ
+
+// プロフィール変更ページ
+.edit_box {
+  height: auto;
+  padding-bottom: 10px;
+  box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+  & .profile_content {
+    & input[type="text"] {
+      width: 300px;
+      font-size: 1rem;
+      padding: 10px;
+    }
+    & .edit_title {
+      line-height: 45px;
+    }
+  }
+  & .edit_complete {
+    display: block;
+    border: none;
+    margin: 20px auto;
+    text-align: center;
+    width: 250px;
+    height: 40px;
+    background-color: $blue;
+    color: $black;
+    line-height: 40px;
+    font-size: 1.1rem;
+  }
+}
+// プロフィール変更ページ
+
+// レビュー投稿完了ページ
+.post_complete_box {
+  width: 80%;
+  height: 600px;
+  padding-bottom: 10px;
+  background-color: white;
+  text-align: center;
+  margin: 40px auto;
+  box-shadow: 0 0 5px rgba(97, 146, 146, 0.486);
+  & .head {
+    padding-top: 100px;
+  }
+  & .btn {
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-between;
+    width: 450px;
+    margin: 40px auto;
+    & .continue_btn,
+    .backHome_btn {
+      background-color: $blue;
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+// レビュー投稿完了ページ
+
+// レビュー一覧ページ
+.catalog_title, .detail_title{
+  width: 90%;
+  height: 80px;
+  padding-bottom: 10px;
+  margin: 20px auto 0 auto ;
+  background-color: $yellow;
+  text-align: center;
+  line-height: 90px;
+}
+.catalog_box {
+  width: 90%;
+  height: auto;
+  padding-bottom: 40px;
+  margin: 20px auto;
+  background-color: white;
+  & .catalog_contents {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+   text-align: center;
+   :hover {
+    opacity: .8;
+  }
+    & .catalog_content {
+      width: 450px;
+      height: 340px;
+      border: 2px rgba(128, 128, 128, 0.349) solid;
+      border-radius: 3px;
+      padding: 6px 10px;
+      margin: 20px;
+      & .catalog_text{
+        padding: 10px 23px;
+        font-size: 1.1rem;
+      }
+      & .catalog_img {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}
+.rate_star{
+  font-size: 20px;
+  color: transparent;
+  background-image: linear-gradient($yellow, orange), linear-gradient(gray, gray);
+  background-position: left, right;
+  background-repeat: no-repeat;
+  background-size: var(--rate) 100%, calc(100% - var(--rate)) 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.rate_star:before{
+  content: "★★★★★";
+}
+
+.pg_btns {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  
+  & .pg_btn {
+    width: 55px;
+    height: 55px;
+    border: 1px rgba(128, 128, 128, 0.349) solid;
+    margin-left: 20px;
+    text-align: center;
+
+    & .pgNum {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      line-height: 55px;
+    }
+    & #selected {
+      background-color: $blue;
+      color: $black;
+    }
+
+    & a {
+      font-size: 1.3rem;
+      
+    }
+    & :hover {
+      & div{
+      background-color: $blue;
+      }
+    }
+  }
+}
+// レビュー一覧ページ
+
+// 商品詳細ページ
+
+.detail_title{
+  width: 90%;
+  height: 80px;
+  padding-bottom: 10px;
+  margin: 20px auto 0 auto ;
+  background-color: $yellow;
+  text-align: center;
+  line-height: 90px;
+}
+.item_box{
+  width: 90%;
+  height: auto;
+  padding-bottom: 40px;
+  margin: 20px auto;
+  background-color: white;
+  & hr {
+    margin: 40px;
+  }
+  & .item_contents {
+   padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    & .item_text{
+      padding-top: 20px;
+      & .item_name{
+      font-size: 1.4rem;
+      }
+
+    }
+    & .item_img{
+      & img {
+        margin-right: 40px;
+        width: 300px;
+        height: 300px;
+      }
+      
+    }
+  }
+  & .share{
+    text-align: center;
+    & .share_title{
+      font-size: 1.2rem;
+    }
+  }
+}
+
+
+// 商品詳細ページ
