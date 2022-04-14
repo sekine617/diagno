@@ -20,8 +20,5 @@ PHP 7.3.11
 http://duo197.php.xdomain.jp/diagno
  
  
-# Author
- 
-* 作成者：関根遼平
-* メールアドレス：seweb14wm54@icloud.com
+
  
